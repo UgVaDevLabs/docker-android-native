@@ -1,2 +1,2 @@
 # docker-android-native
-Simple docker image containing jdk9, Android SDK and NDK for CI usage
+Simple docker image containing jdk8, Android SDK, NDK, cmake and swig for CI usage
