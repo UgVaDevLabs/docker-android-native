@@ -11,10 +11,12 @@ ENV ANDROID_NDK_HOME /opt/android-ndk-linux
 ENV ANDROID_NDK_VERSION "r20b"
 ENV ANDROID_BUILD_TOOLS_VERSION "4333796"
 
+
 RUN apt-get update && apt-get install -y --no-install-recommends \
     unzip \
     wget \
     swig
+RUN apt-get install -y automake autoconf libtool pkg-config gettext perl python flex bison gperf libgmp3-dev make
 RUN cd /opt/android-sdk-linux && \
     wget -q --output-document=sdk-tools.zip https://dl.google.com/android/repository/sdk-tools-linux-${ANDROID_BUILD_TOOLS_VERSION}.zip && \
     unzip sdk-tools.zip && \
@@ -26,4 +28,3 @@ RUN wget -q --output-document=android-ndk.zip https://dl.google.com/android/repo
     unzip android-ndk.zip && \
     rm -f android-ndk.zip && \
     mv android-ndk-${ANDROID_NDK_VERSION} android-ndk-linux
-
